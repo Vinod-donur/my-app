@@ -15,6 +15,10 @@ export default function Text() {
     let newText = text.toLowerCase();
     setText(newText);
   };
+  const handleClear = () => {
+    let newText = "";
+    setText(newText);
+  }
   return (
     <>
       <div className="container">
@@ -38,6 +42,9 @@ export default function Text() {
         </button>
         <button className="btn btn-primary mx-3" onClick={handleDownClick}>
           Convert to lowercase
+        </button>
+        <button className="btn btn-primary " onClick={handleClear}>
+          Clear Text
         </button>
       </div>
       <div className="container my-3">
