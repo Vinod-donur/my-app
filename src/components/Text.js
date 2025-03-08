@@ -1,24 +1,35 @@
 import React, { useState } from "react";
 
-export default function Text() {
+export default function Text(props) {
   const [text, setText] = useState("");
+
   const handleUpClick = () => {
-    // console.log("uppercase was clicked");
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to uppercase", "success");
   };
+
   const handleOnChange = (event) => {
-    // console.log("on change");
     setText(event.target.value);
   };
+
   const handleDownClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to lowercase", "success");
   };
+
   const handleClear = () => {
     let newText = "";
     setText(newText);
-  }
+    props.showAlert("Text cleared", "success");
+  };
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(text);
+    props.showAlert("Text copied to clipboard", "success");
+  };
+
   return (
     <>
       <div className="container">
@@ -33,11 +44,7 @@ export default function Text() {
             onChange={handleOnChange}
           ></textarea>
         </div>
-        <button
-          className="btn btn-primary"
-          onClick={handleUpClick}
-          onChange={handleOnChange}
-        >
+        <button className="btn btn-primary" onClick={handleUpClick}>
           Convert to uppercase
         </button>
         <button className="btn btn-primary mx-3" onClick={handleDownClick}>
@@ -45,6 +52,9 @@ export default function Text() {
         </button>
         <button className="btn btn-primary " onClick={handleClear}>
           Clear Text
+        </button>
+        <button className="btn btn-primary mx-3 " onClick={handleCopy}>
+          Copy Text
         </button>
       </div>
       <div className="container my-3">
