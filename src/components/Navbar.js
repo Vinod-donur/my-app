@@ -4,7 +4,7 @@ export default function Navbar(props) {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
+        <a className="navbar-brand" href="#">
           {props.title}
         </a>
         <button
@@ -21,12 +21,12 @@ export default function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">
+              <a className="nav-link active" aria-current="page" href="#">
                 {props.home}
               </a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/">
+            {/* <li className="nav-item">
+              <a className="nav-link" href="#">
                 Link
               </a>
             </li>
@@ -42,12 +42,12 @@ export default function Navbar(props) {
               </a>
               <ul className="dropdown-menu">
                 <li>
-                  <a className="dropdown-item" href="/">
+                  <a className="dropdown-item" href="#">
                     Action
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/">
+                  <a className="dropdown-item" href="#">
                     Another action
                   </a>
                 </li>
@@ -60,7 +60,7 @@ export default function Navbar(props) {
                   </a>
                 </li>
               </ul>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
